@@ -10,7 +10,11 @@
     <meta name="keywords" content="pasteles San Valentín, cupcakes CDMX, postres románticos, mini pastelitos, regalo original, dulces personalizados, cheesecake tortuga, tarta manzana canela">
     <meta name="author" content="SAYA Pasteles">
     <meta name="robots" content="index, follow">
-    
+    <!-- Después de la meta viewport existente -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
     <!-- Open Graph optimizado -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sayapasteles.com/">
@@ -2394,69 +2398,109 @@ imageHTML = `
         
         sendWhatsAppOrder();
     }
-
-    // Enviar pedido por WhatsApp
-    function sendWhatsAppOrder() {
-        const product = productsData[currentOrder.product];
-        let extraPrice = 0;
-        
-        let message = `🍰 *NUEVO PEDIDO - SAYA PASTELES* 🍰\n\n`;
-        message += `*PRODUCTO:* ${product.title}\n`;
-        message += `*PRECIO BASE:* $${product.price}\n`;
-        message += `*CANTIDAD:* ${currentOrder.quantity}\n`;
-        
-        if (product.category === 'sanvalentin') {
-            extraPrice = currentOrder.flavor.price + currentOrder.filling.price;
-            message += `*SABOR:* ${currentOrder.flavor.name} ${currentOrder.flavor.price > 0 ? `(+$${currentOrder.flavor.price})` : ''}\n`;
-            message += `*RELLENO:* ${currentOrder.filling.name} ${currentOrder.filling.price > 0 ? `(+$${currentOrder.filling.price})` : ''}\n`;
-        } else if (product.category === 'tarta') {
-            message += `*TIPO:* ${currentOrder.tartaType.name}\n`;
-        }
-        
-        const total = (product.price + extraPrice) * currentOrder.quantity;
-        message += `*TOTAL:* $${total}\n\n`;
-        
-        message += `*DATOS DEL CLIENTE:*\n`;
-        message += `• Nombre: ${document.getElementById('customerName').value}\n`;
-        message += `• Teléfono: ${document.getElementById('customerPhone').value}\n`;
-        message += `• Fecha de entrega: ${document.getElementById('deliveryDate').value}\n`;
-        
-        const personalMessage = document.getElementById('personalMessage').value.trim();
-        if (personalMessage) {
-            message += `\n*MENSAJE PARA ETIQUETA:*\n"${personalMessage}"\n\n`;
-        }
-        
-        message += `---\n`;
-        message += `📍 *Entrega en Huehuetoca y alrededores*\n`;
-        message += `⏰ *Tiempo de preparación: 24-48 horas*\n\n`;
-        message += `¿Podrían confirmar disponibilidad y detalles para completar el pedido?`;
-        
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = `https://wa.me/525513581184?text=${encodedMessage}`;
-        
-        showToast('¡Pedido listo!', 'Redirigiendo a WhatsApp para confirmar', 'success');
-        
-        setTimeout(() => {
-            const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
-            if (modal) modal.hide();
-            
-            currentOrder.quantity = 1;
-            document.getElementById('quantityDisplay').textContent = '1';
-            document.getElementById('customerName').value = '';
-            document.getElementById('customerPhone').value = '';
-            document.getElementById('personalMessage').value = '';
-            
-            const product = productsData[currentOrder.product];
-            if (product.category === 'sanvalentin') {
-                currentOrder.flavor = { name: "Vainilla", price: 0 };
-                currentOrder.filling = { name: "Dulce de leche", price: 0 };
-            }
-            
-            window.open(whatsappURL, '_blank');
-            
-        }, 1500);
+// REEMPLAZA TODA LA FUNCIÓN sendWhatsAppOrder() con este código:
+function sendWhatsAppOrder() {
+    const product = productsData[currentOrder.product];
+    let extraPrice = 0;
+    
+    let message = `🍰 *NUEVO PEDIDO - SAYA PASTELES* 🍰\n\n`;
+    message += `*PRODUCTO:* ${product.title}\n`;
+    message += `*PRECIO BASE:* $${product.price}\n`;
+    message += `*CANTIDAD:* ${currentOrder.quantity}\n`;
+    
+    if (product.category === 'sanvalentin') {
+        extraPrice = currentOrder.flavor.price + currentOrder.filling.price;
+        message += `*SABOR:* ${currentOrder.flavor.name} ${currentOrder.flavor.price > 0 ? `(+$${currentOrder.flavor.price})` : ''}\n`;
+        message += `*RELLENO:* ${currentOrder.filling.name} ${currentOrder.filling.price > 0 ? `(+$${currentOrder.filling.price})` : ''}\n`;
+    } else if (product.category === 'tarta') {
+        message += `*TIPO:* ${currentOrder.tartaType.name}\n`;
     }
+    
+    const total = (product.price + extraPrice) * currentOrder.quantity;
+    message += `*TOTAL:* $${total}\n\n`;
+    
+    message += `*DATOS DEL CLIENTE:*\n`;
+    message += `• Nombre: ${document.getElementById('customerName').value}\n`;
+    message += `• Teléfono: ${document.getElementById('customerPhone').value}\n`;
+    message += `• Fecha de entrega: ${document.getElementById('deliveryDate').value}\n`;
+    
+    const personalMessage = document.getElementById('personalMessage').value.trim();
+    if (personalMessage) {
+        message += `\n*MENSAJE PARA ETIQUETA:*\n"${personalMessage}"\n\n`;
+    }
+    
+    message += `---\n`;
+    message += `📍 *Entrega en Huehuetoca y alrededores*\n`;
+    message += `⏰ *Tiempo de preparación: 24-48 horas*\n\n`;
+    message += `¿Podrían confirmar disponibilidad y detalles para completar el pedido?`;
+    
+    // LLAMAR A LA FUNCIÓN ESPECIAL PARA iOS
+    openWhatsAppDirect(message);
+}
 
+// AGREGA ESTA NUEVA FUNCIÓN DESPUÉS DE sendWhatsAppOrder():
+function openWhatsAppDirect(messageText) {
+    const phone = "525513581184";
+    const encodedMessage = encodeURIComponent(messageText);
+    
+    // Para iOS necesitamos una estrategia especial
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    
+    if (isIOS) {
+        // Método 1: Intentar abrir app nativa
+        const nativeURL = `whatsapp://send?phone=${phone}&text=${encodedMessage}`;
+        const webURL = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+        
+        // Crear iframe temporal (truco para iOS)
+        const iframe = document.createElement('iframe');
+        iframe.style.cssText = 'display:none !important;';
+        iframe.src = nativeURL;
+        document.body.appendChild(iframe);
+        
+        // Si no se abre WhatsApp en 1 segundo, abrir versión web
+        setTimeout(() => {
+            document.body.removeChild(iframe);
+            
+            // Abrir en nueva pestaña
+            const newTab = window.open(webURL, '_blank');
+            
+            // Si bloquea popup, usar location
+            if (!newTab || newTab.closed || typeof newTab.closed == 'undefined') {
+                window.location.href = webURL;
+            }
+        }, 1000);
+        
+    } else {
+        // Para Android y otros navegadores
+        window.open(
+            `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`,
+            '_blank'
+        );
+    }
+    
+    // Cerrar modal inmediatamente (no esperar)
+    const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+    if (modal) modal.hide();
+    
+    // Resetear formulario
+    resetOrderForm();
+}
+
+// Función para resetear el formulario
+function resetOrderForm() {
+    currentOrder.quantity = 1;
+    document.getElementById('quantityDisplay').textContent = '1';
+    document.getElementById('customerName').value = '';
+    document.getElementById('customerPhone').value = '';
+    document.getElementById('personalMessage').value = '';
+    
+    const product = productsData[currentOrder.product];
+    if (product.category === 'sanvalentin') {
+        currentOrder.flavor = { name: "Vainilla", price: 0 };
+        currentOrder.filling = { name: "Dulce de leche", price: 0 };
+    }
+}
+  
 </script>
 </body>
 </html>

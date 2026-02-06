@@ -1424,7 +1424,7 @@
     </section>
 
     <!-- Sección: Más Vendidos -->
-    <section class="best-sellers-section" id="mas-vendidos">
+    <section class="best-sellers-section d-none" id="mas-vendidos" style="display: none;">
         <div class="container">
             <h2 class="section-title">Los Más Pedidos</h2>
             <p class="section-subtitle">Nuestras creaciones más populares • Garantía de satisfacción</p>
@@ -1435,7 +1435,7 @@
     </section>
 
     <!-- Sección: Productos San Valentín -->
-    <section class="products-section" id="productos-sanvalentin">
+    <section class="products-section mt-3 pt-5" id="productos-sanvalentinz">
         <div class="container">
             <h2 class="section-title">Edición Especial San Valentín</h2>
             <p class="section-subtitle">Colección exclusiva para celebrar el amor • Disponible hasta el 14 de febrero</p>
@@ -1468,7 +1468,16 @@
             </div>
         </div>
     </section>
-
+<!-- Sección: Otros Productos -->
+<section class="best-sellers-section" id="otros-productos">
+    <div class="container">
+        <h2 class="section-title">Otros Productos</h2>
+        <p class="section-subtitle">Más delicias de nuestra pastelería artesanal</p>
+        <div class="row g-4" id="products-otros">
+            <!-- JavaScript llenará esto -->
+        </div>
+    </div>
+</section>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1631,7 +1640,7 @@
             category: "tarta", 
             desc: "12 docena • Fruta fresca con crema pastelera",
             bestSeller: false,
-            tags: ["POR DOCENA"]
+            tags: ["CLÁSICO"]
         },
         'tartaleta-individual': {
             title: "Tartaleta Individual",
@@ -1640,29 +1649,31 @@
             category: "tarta",
             desc: "1 pieza • Recoger en punto específico",
             bestSeller: false,
-            tags: ["RECOGER"]
+            tags: ["CLÁSICO"]
         },
 
         // OTROS PRODUCTOS
-        'pan-naranja': { 
+        'pan-naranja-otros': { 
             title: "Pan de Naranja Natural", 
             price: 220, 
             images: ["https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_PN.jpeg"], 
             category: "otros", 
             desc: "Naranja 100% natural • Esponjoso y aromático",
             bestSeller: false,
-            tags: ["NATURAL"]
+            rotate:1,
+             tags: ["CLÁSICO"]
         },
-        'cupcakes-mora': { 
+        'cupcakes-mora-otros': { 
             title: "Cupcakes de Mora", 
             price: 110, 
             images: ["https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_CM.jpeg"], 
             category: "otros", 
             desc: "4 piezas • Con o sin relleno (+$15)",
             bestSeller: false,
-            tags: ["CON RELLENO"]
+            rotate:1,
+             tags: ["CLÁSICO"]
         },
-        'pastel-cactus': { 
+        'pastel-cactus-otros': { 
             title: "Pastel de Cactus", 
             price: 360, 
             images: [
@@ -1672,7 +1683,7 @@
             category: "otros", 
             desc: "Diámetro 28cm • Diseño único • Sabor a elegir",
             bestSeller: false,
-            tags: ["DISEÑO ESPECIAL"]
+             tags: ["CLÁSICO"]
         }
     };
 
@@ -1806,57 +1817,70 @@
         setInterval(updateCountdown, 60000);
     }
 
-    // Cargar todos los productos
-    function loadAllProducts() {
-        // Más vendidos (todos los que tienen bestSeller: true)
-        const bestSellersContainer = document.getElementById('best-sellers-container');
-        let bestSellersHTML = '';
+  // Cargar todos los productos
+function loadAllProducts() {
+    console.log("Cargando todos los productos...");
+    
+    // Más vendidos (todos los que tienen bestSeller: true)
+    const bestSellersContainer = document.getElementById('best-sellers-container');
+    let bestSellersHTML = '';
+    
+    const bestSellers = Object.entries(productsData)
+        .filter(([id, product]) => product.bestSeller)
+        .slice(0, 4);
+    
+    console.log("Más vendidos encontrados:", bestSellers.length);
+    
+    bestSellers.forEach(([id, product]) => {
+        bestSellersHTML += createProductCard(id, product, true);
+    });
+    
+    bestSellersContainer.innerHTML = bestSellersHTML || `<div class="col-12 text-center"><p class="text-muted">No hay productos más vendidos</p></div>`;
+    
+    // Productos por categoría
+    const categories = {
+        'sanvalentin': 'products-sanvalentin',
+        'cheesecake': 'products-cheesecakes',
+        'tarta': 'products-tartas',
+        'otros': 'products-otros'
+    };
+    
+    console.log("Contenedores disponibles:", categories);
+    
+    for (const [category, containerId] of Object.entries(categories)) {
+        const container = document.getElementById(containerId);
+        console.log(`Procesando categoría ${category} en contenedor ${containerId}:`, container ? "Encontrado" : "No encontrado");
         
-        const bestSellers = Object.entries(productsData)
-            .filter(([id, product]) => product.bestSeller)
-            .slice(0, 4); // Mostrar hasta 4 productos más vendidos
+        if (!container) {
+            console.warn(`Contenedor ${containerId} no encontrado en HTML`);
+            continue;
+        }
         
-        bestSellers.forEach(([id, product]) => {
-            bestSellersHTML += createProductCard(id, product, true);
-        });
+        let html = '';
+        let count = 0;
         
-        bestSellersContainer.innerHTML = bestSellersHTML;
-        
-        // Productos por categoría
-        const categories = {
-            'sanvalentin': 'productos-sanvalentin',
-            'cheesecake': 'products-cheesecakes',
-            'tarta': 'products-tartas',
-            'otros': 'products-otros'
-        };
-        
-        for (const [category, containerId] of Object.entries(categories)) {
-            const container = document.getElementById(containerId);
-            if (!container) continue;
-            
-            let html = '';
-            let count = 0;
-            
-            for (const [id, product] of Object.entries(productsData)) {
-                if (product.category === category) {
-                    html += createProductCard(id, product, false);
-                    count++;
-                }
-            }
-            
-            if (count === 0) {
-                container.innerHTML = `<div class="col-12 text-center py-5">
-                    <p class="text-muted">Próximamente más productos en esta categoría</p>
-                </div>`;
-            } else {
-                container.innerHTML = html;
+        for (const [id, product] of Object.entries(productsData)) {
+            if (product.category === category) {
+                console.log(`  - Añadiendo: ${product.title} (${id})`);
+                html += createProductCard(id, product, false);
+                count++;
             }
         }
         
-        // Inicializar swipers después de cargar los productos
-        setTimeout(initializeSwipers, 100);
+        console.log(`  Total productos en ${category}: ${count}`);
+        
+        if (count === 0) {
+            container.innerHTML = `<div class="col-12 text-center py-5">
+                <p class="text-muted">Próximamente más productos en esta categoría</p>
+            </div>`;
+        } else {
+            container.innerHTML = html;
+        }
     }
-
+    
+    // Inicializar swipers después de cargar los productos
+    setTimeout(initializeSwipers, 100);
+}
     // Inicializar todos los swipers
     function initializeSwipers() {
         document.querySelectorAll('.product-swiper').forEach((swiperContainer, index) => {

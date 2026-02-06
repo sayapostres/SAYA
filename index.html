@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -35,7 +33,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -475,6 +473,55 @@
         .btn-secondary:hover {
             background: var(--lila-fondo);
             transform: translateY(-3px);
+        }
+
+        /* Sección de menú permanente */
+        .permanent-menu-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f9f7ff 0%, #f0edf5 100%);
+        }
+
+        .permanent-menu-card {
+            background: white;
+            border-radius: var(--radio-xl);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--sombra-suave);
+            height: 100%;
+        }
+
+        .permanent-menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-intensa);
+        }
+
+        .permanent-menu-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .permanent-menu-content {
+            padding: 1.5rem;
+        }
+
+        .permanent-menu-title {
+            font-size: 1.4rem;
+            color: var(--lila-oscuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .permanent-menu-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--lila);
+            margin-bottom: 1rem;
+        }
+
+        .permanent-menu-desc {
+            color: var(--texto-claro);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         /* Galería de etiquetas personalizadas */
@@ -1272,8 +1319,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-logo">
-                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_logo.jpeg" 
-                         alt="SAYA Pasteles Logo">
+                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_logo.jpeg" alt="SAYA Pasteles Logo">
                 </div>
                 <h1 class="hero-title">SAYA PASTELES</h1>
                 <p class="hero-subtitle">Creaciones artesanales para momentos especiales • Edición San Valentín 2026</p>
@@ -1338,11 +1384,11 @@
         </div>
     </section>
 
-    <!-- Productos -->
+    <!-- Productos San Valentín -->
     <section class="products-section" id="productos">
         <div class="container">
-            <h2 class="section-title">Nuestra Colección Exclusiva</h2>
-            <p class="section-subtitle">Selecciona entre nuestras creaciones premium para San Valentín</p>
+            <h2 class="section-title">Edición San Valentín 2026</h2>
+            <p class="section-subtitle">Colección exclusiva para el día del amor y la amistad</p>
             
             <div class="row g-4">
                 <!-- Mini Pastelitos -->
@@ -1350,23 +1396,20 @@
                     <div class="product-card featured">
       
                         <div class="product-swiper-container">
-                            <div class="product-swiper swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_A.jpeg" 
-                                             alt="Mini Pastelitos SAYA Pasteles">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_B.jpeg" 
-                                             alt="Mini Pastelitos Decorados">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_C.jpeg" 
-                                             alt="Pastelitos Corazón">
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
+                            <div class="product-swiper swiper swiper-initialized swiper-horizontal swiper-ios swiper-backface-hidden">
+                                <div class="swiper-wrapper" id="swiper-wrapper-75fe0f910458288d0" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-628px, 0px, 0px); transition-delay: 0ms;">
+                                    
+                                    
+                                    
+                                <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 314px;">
+                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_B.jpeg" alt="Mini Pastelitos Decorados">
+                                    </div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 314px;">
+                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_C.jpeg" alt="Pastelitos Corazón">
+                                    </div><div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3" data-swiper-slide-index="0" style="width: 314px;">
+                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_A.jpeg" alt="Mini Pastelitos SAYA Pasteles">
+                                    </div></div>
+                                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                         </div>
                         
                         <div class="product-header">
@@ -1395,23 +1438,20 @@
                     <div class="product-card">
                
                         <div class="product-swiper-container">
-                            <div class="product-swiper swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_M.jpeg" 
-                                             alt="Cupcakes Premium">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_N.jpeg" 
-                                             alt="Cupcakes Decorados">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_O.jpeg" 
-                                             alt="Cupcakes Personalizados">
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
+                            <div class="product-swiper swiper swiper-initialized swiper-horizontal swiper-ios swiper-backface-hidden">
+                                <div class="swiper-wrapper" id="swiper-wrapper-313e2a1f64929284" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-628px, 0px, 0px); transition-delay: 0ms;">
+                                    
+                                    
+                                    
+                                <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 314px;">
+                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_N.jpeg" alt="Cupcakes Decorados">
+                                    </div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 314px;">
+                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_O.jpeg" alt="Cupcakes Personalizados">
+                                    </div><div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3" data-swiper-slide-index="0" style="width: 314px;">
+                                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_M.jpeg" alt="Cupcakes Premium">
+                                    </div></div>
+                                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                         </div>
                         
                         <div class="product-header">
@@ -1438,6 +1478,162 @@
         </div>
     </section>
 
+    <!-- Sección de Menú Permanente -->
+    <section class="permanent-menu-section" id="menu-permanente">
+        <div class="container">
+            <h2 class="section-title">Nuestro Menú Permanente</h2>
+            <p class="section-subtitle">Delicias disponibles todo el año • Creaciones artesanales exclusivas</p>
+            
+            <div class="row g-4">
+                <!-- Cheesecake Tortuga -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="permanent-menu-card">
+                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_CH.jpeg" alt="Cheesecake Tortuga" class="permanent-menu-image">
+                        <div class="permanent-menu-content">
+                            <h3 class="permanent-menu-title">Cheesecake Tortuga</h3>
+                            <div class="permanent-menu-price">$420</div>
+                            <p class="permanent-menu-desc">Delicioso cheesecake con dulce de leche, chocolate Turín semiamargo, crema de avellanas y nuez caramelizada. Una combinación irresistible.</p>
+                            <button class="btn-primary" onclick="orderPermanentItem('Cheesecake Tortuga', 420)">
+                                <i class="fas fa-shopping-cart"></i> Ordenar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cheesecake de Frutos Rojos -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="permanent-menu-card">
+                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_CFR.jpeg" alt="Cheesecake de Frutos Rojos" class="permanent-menu-image">
+                        <div class="permanent-menu-content">
+                            <h3 class="permanent-menu-title">Cheesecake de Frutos Rojos</h3>
+                            <div class="permanent-menu-price">$420</div>
+                            <p class="permanent-menu-desc">Exquisito cheesecake cubierto con una generosa capa de frutos rojos frescos. Perfecto equilibrio entre lo cremoso y lo frutal.</p>
+                            <button class="btn-primary" onclick="orderPermanentItem('Cheesecake de Frutos Rojos', 420)">
+                                <i class="fas fa-shopping-cart"></i> Ordenar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cheesecake de Ferrero -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="permanent-menu-card">
+                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_CF.jpeg" alt="Cheesecake de Ferrero" class="permanent-menu-image">
+                        <div class="permanent-menu-content">
+                            <h3 class="permanent-menu-title">Cheesecake de Ferrero</h3>
+                            <div class="permanent-menu-price">$460</div>
+                            <p class="permanent-menu-desc">Lujoso cheesecake inspirado en los famosos chocolates Ferrero Rocher. Con avellanas, chocolate y un toque de oro.</p>
+                            <button class="btn-primary" onclick="orderPermanentItem('Cheesecake de Ferrero', 460)">
+                                <i class="fas fa-shopping-cart"></i> Ordenar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pan de Naranja Natural -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="permanent-menu-card">
+                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_PN.jpeg" alt="Pan de Naranja Natural" class="permanent-menu-image">
+                        <div class="permanent-menu-content">
+                            <h3 class="permanent-menu-title">Pan de Naranja Natural</h3>
+                            <div class="permanent-menu-price">$220</div>
+                            <p class="permanent-menu-desc">Esponjoso y aromático pan elaborado con jugo y ralladura de naranja natural. Perfecto para el desayuno o merienda.</p>
+                            <button class="btn-primary" onclick="orderPermanentItem('Pan de Naranja Natural', 220)">
+                                <i class="fas fa-shopping-cart"></i> Ordenar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarta de Manzana-Canela -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="permanent-menu-card">
+                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_TM.jpeg" alt="Tarta de Manzana-Canela" class="permanent-menu-image">
+                        <div class="permanent-menu-content">
+                            <h3 class="permanent-menu-title">Tarta de Manzana-Canela</h3>
+                            <div class="permanent-menu-price">$290</div>
+                            <p class="permanent-menu-desc">Clásica tarta de manzana con el toque especial de canela. Crujiente por fuera, suave por dentro. Tradición con sabor.</p>
+                            <button class="btn-primary" onclick="orderPermanentItem('Tarta de Manzana-Canela', 290)">
+                                <i class="fas fa-shopping-cart"></i> Ordenar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastel de Cactus -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="permanent-menu-card">
+                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_PC1.jpeg" alt="Pastel de Cactus" class="permanent-menu-image">
+                        <div class="permanent-menu-content">
+                            <h3 class="permanent-menu-title">Pastel de Cactus</h3>
+                            <div class="permanent-menu-price">$360</div>
+                            <p class="permanent-menu-desc">Original pastel decorado como un cactus. Diámetro 28cm. Ideal para cumpleaños temáticos o amantes de las suculentas.</p>
+                            <button class="btn-primary" onclick="orderPermanentItem('Pastel de Cactus', 360)">
+                                <i class="fas fa-shopping-cart"></i> Ordenar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tartaletas -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="permanent-menu-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_TMM.jpeg" alt="Tartaletas" class="permanent-menu-image" style="height: 100%;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="permanent-menu-content">
+                                    <h3 class="permanent-menu-title">Tartaletas de Manzana y Fruta</h3>
+                                    <div class="permanent-menu-price">$25 c/u • $290 docena</div>
+                                    <p class="permanent-menu-desc">Deliciosas tartaletas individuales de manzana y fruta con crema pastelera. Disponibles para recoger en punto específico. Pedido mínimo: 12 piezas por $290.</p>
+                                    <div class="d-flex gap-3">
+                                        <button class="btn-primary" onclick="orderPermanentItem('Tartaleta Individual', 25)">
+                                            <i class="fas fa-shopping-cart"></i> 1 Pieza
+                                        </button>
+                                        <button class="btn-secondary" onclick="orderPermanentItem('Docena de Tartaletas', 290)">
+                                            <i class="fas fa-box"></i> Docena
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cupcakes de Mora -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="permanent-menu-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_CM.jpeg" alt="Cupcakes de Mora" class="permanent-menu-image" style="height: 100%;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="permanent-menu-content">
+                                    <h3 class="permanent-menu-title">Cupcakes de Mora</h3>
+                                    <div class="permanent-menu-price">$110 (4 pzs) • $125 con relleno</div>
+                                    <p class="permanent-menu-desc">Exquisitos cupcakes sabor mora con frosting cremoso. Disponibles simples o con relleno especial. Pack de 4 piezas perfecto para compartir.</p>
+                                    <div class="d-flex gap-3">
+                                        <button class="btn-primary" onclick="orderPermanentItem('Cupcakes de Mora (4 pzs)', 110)">
+                                            <i class="fas fa-shopping-cart"></i> Simples
+                                        </button>
+                                        <button class="btn-secondary" onclick="orderPermanentItem('Cupcakes de Mora con Relleno (4 pzs)', 125)">
+                                            <i class="fas fa-shopping-cart"></i> Con Relleno
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Galería de etiquetas personalizadas -->
     <section class="etiquetas-section" id="etiquetas">
         <div class="container">
@@ -1447,8 +1643,7 @@
             <div class="etiquetas-grid">
                 <!-- Usando todas las imágenes disponibles -->
                 <div class="etiqueta-card">
-                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_F.jpeg" 
-                         alt="Etiqueta Romántica" class="etiqueta-image">
+                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_F.jpeg" alt="Etiqueta Romántica" class="etiqueta-image">
                     <div class="etiqueta-content">
                         <h4 class="etiqueta-title">Diseño Romántico</h4>
                         <p class="etiqueta-desc">Perfecta para declaraciones de amor y propuestas especiales.</p>
@@ -1456,8 +1651,7 @@
                 </div>
                 
                 <div class="etiqueta-card">
-                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_G.jpeg" 
-                         alt="Etiqueta Elegante" class="etiqueta-image">
+                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_G.jpeg" alt="Etiqueta Elegante" class="etiqueta-image">
                     <div class="etiqueta-content">
                         <h4 class="etiqueta-title">Estilo Elegante</h4>
                         <p class="etiqueta-desc">Diseño sofisticado para ocasiones especiales y formales.</p>
@@ -1465,8 +1659,7 @@
                 </div>
                 
                 <div class="etiqueta-card">
-                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_H.jpeg" 
-                         alt="Etiqueta Moderna" class="etiqueta-image">
+                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_H.jpeg" alt="Etiqueta Moderna" class="etiqueta-image">
                     <div class="etiqueta-content">
                         <h4 class="etiqueta-title">Diseño Moderno</h4>
                         <p class="etiqueta-desc">Estilo contemporáneo con colores vibrantes y frescos.</p>
@@ -1474,8 +1667,7 @@
                 </div>
                 
                 <div class="etiqueta-card">
-                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_I.jpeg" 
-                         alt="Etiqueta Clásica" class="etiqueta-image">
+                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_I.jpeg" alt="Etiqueta Clásica" class="etiqueta-image">
                     <div class="etiqueta-content">
                         <h4 class="etiqueta-title">Estilo Clásico</h4>
                         <p class="etiqueta-desc">Diseño atemporal que nunca pasa de moda, elegancia pura.</p>
@@ -1483,8 +1675,7 @@
                 </div>
                 
                 <div class="etiqueta-card">
-                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_J.jpeg" 
-                         alt="Etiqueta Personalizada" class="etiqueta-image">
+                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_J.jpeg" alt="Etiqueta Personalizada" class="etiqueta-image">
                     <div class="etiqueta-content">
                         <h4 class="etiqueta-title">Personalización Total</h4>
                         <p class="etiqueta-desc">Crea tu propio diseño con nombres, fotos y mensajes especiales.</p>
@@ -1492,8 +1683,7 @@
                 </div>
                 
                 <div class="etiqueta-card">
-                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_K.jpeg" 
-                         alt="Etiqueta San Valentín" class="etiqueta-image">
+                    <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_K.jpeg" alt="Etiqueta San Valentín" class="etiqueta-image">
                     <div class="etiqueta-content">
                         <h4 class="etiqueta-title">Edición San Valentín</h4>
                         <p class="etiqueta-desc">Diseño exclusivo para el día del amor y la amistad.</p>
@@ -1516,39 +1706,14 @@
             <p class="section-subtitle">Experiencias reales de quienes han confiado en nosotros</p>
             
             <div class="testimonials-slider">
-                <div class="swiper testimonialsSwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    Los mini pastelitos para el aniversario con mi esposa fueron increíbles. No solo se veían hermosos, ¡sabían aún mejor! La etiqueta personalizada con nuestro mensaje fue el detalle perfecto.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">AM</div>
-                                    <div class="author-info">
-                                        <h4>Ana Martínez</h4>
-                                        <p>Cliente desde 2025</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="swiper testimonialsSwiper swiper-initialized swiper-horizontal swiper-ios swiper-backface-hidden">
+                    <div class="swiper-wrapper" id="swiper-wrapper-0331b6706e5105465" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-732px, 0px, 0px); transition-delay: 0ms;">
                         
-                        <div class="swiper-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    Pedí los cupcakes premium para la fiesta sorpresa de mi novio y todos quedaron fascinados. La imagen comestible salió perfecta y el sabor era exquisito. ¡Definitivamente volveré a ordenar!
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">CR</div>
-                                    <div class="author-info">
-                                        <h4>Carlos Rodríguez</h4>
-                                        <p>Cliente satisfecho</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         
-                        <div class="swiper-slide">
+                        
+                        
+                        
+                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 366px;">
                             <div class="testimonial-card">
                                 <div class="testimonial-content">
                                     El proceso de pedido fue super sencillo y la atención personalizada increíble. Los pastelitos llegaron perfectos y a tiempo. Mi esposa lloró de la emoción al ver el mensaje en la etiqueta.
@@ -1561,10 +1726,35 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+                        </div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 3" data-swiper-slide-index="0" style="width: 366px;">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    Los mini pastelitos para el aniversario con mi esposa fueron increíbles. No solo se veían hermosos, ¡sabían aún mejor! La etiqueta personalizada con nuestro mensaje fue el detalle perfecto.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">AM</div>
+                                    <div class="author-info">
+                                        <h4>Ana Martínez</h4>
+                                        <p>Cliente desde 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 366px;">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    Pedí los cupcakes premium para la fiesta sorpresa de mi novio y todos quedaron fascinados. La imagen comestible salió perfecta y el sabor era exquisito. ¡Definitivamente volveré a ordenar!
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">CR</div>
+                                    <div class="author-info">
+                                        <h4>Carlos Rodríguez</h4>
+                                        <p>Cliente satisfecho</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
             </div>
         </div>
     </section>
@@ -1828,7 +2018,7 @@
                                 <i class="fas fa-calendar-alt"></i>
                                 Fecha de entrega
                             </label>
-                            <input type="date" class="form-input" id="deliveryDate">
+                            <input type="date" class="form-input" id="deliveryDate" min="2026-02-07">
                         </div>
                         
                         <div class="form-group">
@@ -1864,8 +2054,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <div class="footer-brand">
-                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_logo.jpeg" 
-                             alt="SAYA Pasteles" class="footer-logo">
+                        <img src="https://cdn.runapp.run/uploads/avatars/326xba967354609583f61cdb7e39b1789e4b_logo.jpeg" alt="SAYA Pasteles" class="footer-logo">
                         SAYA PASTELES
                     </div>
                     <p class="footer-about">
@@ -1888,8 +2077,8 @@
                     <div class="footer-links">
                         <h5>Productos</h5>
                         <ul>
-                            <li><a href="#productos"><i class="fas fa-chevron-right"></i> Mini Pastelitos</a></li>
-                            <li><a href="#productos"><i class="fas fa-chevron-right"></i> Cupcakes Premium</a></li>
+                            <li><a href="#productos"><i class="fas fa-chevron-right"></i> Edición San Valentín</a></li>
+                            <li><a href="#menu-permanente"><i class="fas fa-chevron-right"></i> Menú Permanente</a></li>
                             <li><a href="#etiquetas"><i class="fas fa-chevron-right"></i> Etiquetas Personalizadas</a></li>
                             <li><a href="#" onclick="startOrder()"><i class="fas fa-chevron-right"></i> Personalización</a></li>
                         </ul>
@@ -1902,8 +2091,8 @@
                         <ul>
                             <li><a href="#faq"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
                             <li><a href="#testimonios"><i class="fas fa-chevron-right"></i> Testimonios</a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="fas fa-chevron-right"></i> Contáctanos</a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#policyModal"><i class="fas fa-chevron-right"></i> Políticas</a></li>
+                            <li><a href="#" onclick="openWhatsApp()"><i class="fas fa-chevron-right"></i> Contáctanos</a></li>
+                            <li><a href="#" onclick="showPolicies()"><i class="fas fa-chevron-right"></i> Políticas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -2457,95 +2646,395 @@
             // Enviar por WhatsApp
             sendWhatsAppOrder();
         }
-
+        
         function sendWhatsAppOrder() {
-            const product = productsData[currentOrder.product];
-            const total = calculateTotal();
-            
-            // Formatear fecha
-            const deliveryDate = new Date(currentOrder.deliveryDate);
-            const formattedDate = deliveryDate.toLocaleDateString('es-ES', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            // Crear mensaje detallado
-            let message = `✨ *NUEVO PEDIDO - SAYA PASTELES* ✨\n`;
-            message += `*Edición San Valentín 2026*\n\n`;
-            
-            message += `*📦 DETALLES DEL PEDIDO:*\n`;
-            message += `• *Producto:* ${product.title}\n`;
-            message += `• *Cantidad:* ${currentOrder.quantity} ${currentOrder.product === 'cupcakes' ? 'packs' : 'unidades'}\n`;
-            message += `• *Sabor:* ${currentOrder.flavor.name}\n`;
-            message += `• *Relleno:* ${currentOrder.filling.name}\n`;
-            
-            if (currentOrder.includeImage) {
-                message += `• *Imagen comestible:* Sí (+$10)\n`;
-            }
-            
-            message += `• *Total:* $${total}\n\n`;
-            
-            message += `*👤 DATOS DEL CLIENTE:*\n`;
-            message += `• *Nombre:* ${currentOrder.customerName}\n`;
-            message += `• *Teléfono:* ${currentOrder.customerPhone}\n`;
-            message += `• *Fecha de entrega:* ${formattedDate}\n\n`;
-            
-            if (currentOrder.personalMessage) {
-                message += `*💌 MENSAJE PARA ETIQUETA:*\n"${currentOrder.personalMessage}"\n\n`;
-            }
-            
-            message += `---\n`;
-            message += `*📝 NOTAS:*\n`;
-            message += `• Este pedido requiere confirmación de disponibilidad\n`;
-            message += `• El precio final será confirmado por SAYA Pasteles\n`;
-            message += `• Se requiere anticipo para reservar la fecha\n\n`;
-            
-            message += `*¿Aceptan este pedido?*`;
-            
-            // Codificar mensaje
-            const encodedMessage = encodeURIComponent(message);
-            const phoneNumber = '5513581184';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
-            // Abrir WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Cerrar modal
-            const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+    const product = productsData[currentOrder.product];
+    const total = calculateTotal();
+    
+    // Formatear fecha
+    const deliveryDate = new Date(currentOrder.deliveryDate);
+    const formattedDate = deliveryDate.toLocaleDateString('es-ES', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    // Crear mensaje detallado
+    let message = `✨ *NUEVO PEDIDO - SAYA PASTELES* ✨\n`;
+    message += `*Edición San Valentín 2026*\n\n`;
+    
+    message += `*📦 DETALLES DEL PEDIDO:*\n`;
+    message += `• *Producto:* ${product.title}\n`;
+    message += `• *Cantidad:* ${currentOrder.quantity} ${currentOrder.product === 'cupcakes' ? 'packs' : 'unidades'}\n`;
+    message += `• *Sabor:* ${currentOrder.flavor.name}\n`;
+    message += `• *Relleno:* ${currentOrder.filling.name}\n`;
+    
+    if (currentOrder.includeImage) {
+        message += `• *Imagen comestible:* Sí (+$10)\n`;
+    }
+    
+    message += `• *Total:* $${total}\n\n`;
+    
+    message += `*👤 DATOS DEL CLIENTE:*\n`;
+    message += `• *Nombre:* ${currentOrder.customerName}\n`;
+    message += `• *Teléfono:* ${currentOrder.customerPhone}\n`;
+    message += `• *Fecha de entrega:* ${formattedDate}\n\n`;
+    
+    if (currentOrder.personalMessage) {
+        message += `*💌 MENSAJE PARA ETIQUETA:*\n"${currentOrder.personalMessage}"\n\n`;
+    }
+    
+    message += `---\n`;
+    message += `*📝 NOTAS:*\n`;
+    message += `• Este pedido requiere confirmación de disponibilidad\n`;
+    message += `• El precio final será confirmado por SAYA Pasteles\n`;
+    message += `• Se requiere anticipo para reservar la fecha\n\n`;
+    
+    message += `*¿Aceptan este pedido?*`;
+    
+    // Codificar mensaje
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '5513581184';
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // Mostrar notificación de éxito
+    showToast('¡Pedido listo!', 'Redirigiendo a WhatsApp para confirmar', 'success');
+    
+    // Cerrar modal después de 1.5 segundos
+    setTimeout(() => {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+        if (modal) {
             modal.hide();
-            
-            // Mostrar confirmación
-            showToast('¡Pedido enviado!', 'Se abrirá WhatsApp para confirmar tu pedido', 'success');
-            
-            // Resetear orden
-            resetOrder();
         }
+        // Resetear orden
+        resetOrder();
+    }, 1500);
+    
+    // Abrir WhatsApp en nueva pestaña
+    window.open(whatsappURL, '_blank');
+}
 
-        function setupWhatsApp() {
-            const defaultMessage = encodeURIComponent(`Hola SAYA Pasteles 👋\n\nEstoy interesado/a en sus productos para San Valentín 2026. ¿Podrían darme más información sobre:\n\n1. Disponibilidad de fechas\n2. Precios actualizados\n3. Opciones de personalización\n\n¡Gracias! 🎂✨`);
-            const phoneNumber = '5513581184';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
-            
-            // Botón flotante
-            document.getElementById('whatsappButton').addEventListener('click', function(e) {
-                e.preventDefault();
-                window.open(whatsappURL, '_blank');
-            });
-            
-            // Botón en footer
-            document.getElementById('footerWhatsapp').addEventListener('click', function(e) {
-                e.preventDefault();
-                window.open(whatsappURL, '_blank');
-            });
-        }
+// Función para pedidos del menú permanente
+function orderPermanentItem(itemName, price) {
+    const phoneNumber = '5513581184';
+    const message = `Hola SAYA Pasteles 👋\n\nMe interesa ordenar:\n\n*• Producto:* ${itemName}\n*• Precio:* $${price}\n\nPor favor, envíenme información sobre disponibilidad y proceso de pedido.`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    showToast('¡Producto seleccionado!', 'Redirigiendo a WhatsApp para ordenar', 'success');
+    
+    // Abrir WhatsApp después de 1 segundo
+    setTimeout(() => {
+        window.open(whatsappURL, '_blank');
+    }, 1000);
+}
 
-        // Función para FAQ
-        function toggleFAQ(element) {
-            const faqItem = element.parentElement;
-            faqItem.classList.toggle('active');
+// Función para abrir WhatsApp general
+function openWhatsApp() {
+    const phoneNumber = '5513581184';
+    const message = "Hola SAYA Pasteles, me gustaría hacer una consulta sobre sus productos para San Valentín 2026.";
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappURL, '_blank');
+}
+
+// Función para mostrar políticas
+function showPolicies() {
+    const policies = `
+✨ *POLÍTICAS DE PEDIDOS - SAYA PASTELES* ✨
+
+*📅 POLÍTICA DE RESERVAS:*
+• Pedido mínimo con 5 días de anticipación
+• Para fechas especiales (San Valentín, Navidad): 7-10 días
+• Se requiere anticipo del 50% para reservar fecha
+
+*💰 POLÍTICA DE PAGOS:*
+• Transferencia bancaria
+• Depósito en OXXO
+• Efectivo al recoger
+• El anticipo no es reembolsable
+
+*📦 POLÍTICA DE ENTREGA:*
+• Entrega a domicilio disponible (costo adicional)
+• Recoger en punto acordado
+• Horario de entregas: 9am - 8pm
+• Responsabilidad del cliente al momento de recibir
+
+*🔄 POLÍTICA DE CAMBIOS Y CANCELACIONES:*
+• Cambios permitidos hasta 48 horas antes
+• Cancelaciones con 72+ horas: reembolso completo
+• Cancelaciones con 48-72 horas: 50% de reembolso
+• Cancelaciones con menos de 48 horas: sin reembolso
+
+*🍰 POLÍTICA DE PRODUCTOS:*
+• Productos elaborados el mismo día
+• Conservar en refrigeración
+• Consumir dentro de las 48 horas
+• No apto para personas con alergias específicas
+    `;
+    
+    const encodedPolicies = encodeURIComponent(policies);
+    const whatsappURL = `https://wa.me/5513581184?text=${encodedPolicies}`;
+    
+    window.open(whatsappURL, '_blank');
+}
+
+// Actualizar el evento DOMContentLoaded para incluir nuevas configuraciones
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (código existente)
+    
+    // Añadir estas líneas:
+    setupOrderModalDates();
+    setupWhatsApp();
+    
+    // Configurar botones del menú permanente
+    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+        if (button.textContent.includes('Ordenar')) {
+            button.addEventListener('click', function(e) {
+                if (!this.onclick) {
+                    const itemName = this.closest('.permanent-menu-content')?.querySelector('.permanent-menu-title')?.textContent || 'Producto SAYA';
+                    const priceText = this.closest('.permanent-menu-content')?.querySelector('.permanent-menu-price')?.textContent;
+                    const price = parseInt(priceText?.match(/\$(\d+)/)?.[1]) || 0;
+                    
+                    if (price > 0) {
+                        orderPermanentItem(itemName, price);
+                        e.preventDefault();
+                    }
+                }
+            });
         }
-    </script>
-</body>
-</html>
+    });
+});
+
+// Agregar validación en tiempo real para los campos del formulario
+document.addEventListener('DOMContentLoaded', function() {
+    const customerName = document.getElementById('customerName');
+    const customerPhone = document.getElementById('customerPhone');
+    
+    if (customerName) {
+        customerName.addEventListener('input', function() {
+            if (this.value.length > 2) {
+                this.style.borderColor = 'var(--lila)';
+            } else {
+                this.style.borderColor = '';
+            }
+        });
+    }
+    
+    if (customerPhone) {
+        customerPhone.addEventListener('input', function() {
+            const phoneRegex = /^[0-9\s\-\(\)\+]{10,}$/;
+            if (phoneRegex.test(this.value.replace(/\s/g, ''))) {
+                this.style.borderColor = 'var(--lila)';
+            } else {
+                this.style.borderColor = '';
+            }
+        });
+    }
+});
+
+// Función para mostrar error en formulario
+function showFormError(field, message) {
+    const input = document.getElementById(field);
+    if (input) {
+        input.style.borderColor = 'var(--rosa-corazon)';
+        input.focus();
+        showToast('Campo requerido', message, 'error');
+    }
+}
+
+// Mejorar la función de validación de paso
+function validateStep(step) {
+    switch(step) {
+        case 1:
+            if (!currentOrder.product) {
+                showToast('Selecciona un producto', 'Elige entre Mini Pastelitos o Cupcakes Premium', 'error');
+                return false;
+            }
+            return true;
+            
+        case 2:
+            if (!currentOrder.flavor) {
+                showToast('Selecciona un sabor', 'Elige tu sabor favorito para continuar', 'error');
+                return false;
+            }
+            return true;
+            
+        case 3:
+            if (!currentOrder.filling) {
+                showToast('Selecciona un relleno', 'Elige el relleno para tu pastel', 'error');
+                return false;
+            }
+            return true;
+            
+        case 4:
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const date = document.getElementById('deliveryDate').value;
+            
+            if (!name) {
+                showFormError('customerName', 'Por favor ingresa tu nombre completo');
+                return false;
+            }
+            
+            if (!phone || phone.replace(/\D/g, '').length < 10) {
+                showFormError('customerPhone', 'Ingresa un número de teléfono válido (mínimo 10 dígitos)');
+                return false;
+            }
+            
+            if (!date) {
+                showToast('Selecciona fecha', 'Elige la fecha de entrega deseada', 'error');
+                return false;
+            }
+            
+            // Validar fecha no sea pasada
+            const selectedDate = new Date(date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (selectedDate < today) {
+                showToast('Fecha inválida', 'La fecha de entrega debe ser futura', 'error');
+                document.getElementById('deliveryDate').value = '';
+                return false;
+            }
+            
+            return true;
+            
+        default:
+            return true;
+    }
+}
+
+// Función para iniciar pedido - versión mejorada
+function startOrder(productType = null) {
+    // Resetear orden
+    resetOrder();
+    
+    // Si se especifica un producto, seleccionarlo automáticamente
+    if (productType && productsData[productType]) {
+        currentOrder.product = productType;
+        
+        // Seleccionar automáticamente el producto en el modal
+        setTimeout(() => {
+            const productCard = document.querySelector(`[data-product="${productType}"]`);
+            if (productCard) {
+                document.querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+                productCard.classList.add('selected');
+            }
+        }, 100);
+    }
+    
+    // Configurar el modal
+    const modalTitle = document.getElementById('modalTitle');
+    if (modalTitle) {
+        modalTitle.textContent = productType ? 
+            `Personalizar ${productsData[productType].title}` : 
+            'Personaliza tu Pedido';
+    }
+    
+    // Mostrar primer paso
+    showStep(1);
+    
+    // Mostrar modal usando Bootstrap
+    const orderModal = document.getElementById('orderModal');
+    if (orderModal) {
+        const modal = new bootstrap.Modal(orderModal);
+        modal.show();
+        
+        // Configurar eventos después de que el modal se muestre
+        orderModal.addEventListener('shown.bs.modal', function() {
+            // Enfocar en la primera selección
+            if (!productType) {
+                const firstProduct = document.querySelector('[data-product]');
+                if (firstProduct) {
+                    firstProduct.focus();
+                }
+            }
+        });
+    }
+}
+
+// Función mejorada para resetear orden
+function resetOrder() {
+    currentOrder = {
+        product: null,
+        quantity: 1,
+        includeImage: false,
+        flavor: null,
+        filling: null,
+        customerName: '',
+        customerPhone: '',
+        deliveryDate: '',
+        personalMessage: ''
+    };
+    
+    // Resetear UI
+    document.getElementById('quantityDisplay').textContent = '1';
+    document.querySelectorAll('.option-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    
+    // Resetear campos del formulario
+    const customerName = document.getElementById('customerName');
+    const customerPhone = document.getElementById('customerPhone');
+    const personalMessage = document.getElementById('personalMessage');
+    
+    if (customerName) customerName.value = '';
+    if (customerPhone) customerPhone.value = '';
+    if (personalMessage) personalMessage.value = '';
+    
+    // Resetear fecha a San Valentín 2026
+    const valentinesDay = new Date('2026-02-14');
+    const valentinesDateStr = valentinesDay.toISOString().split('T')[0];
+    const deliveryDateInput = document.getElementById('deliveryDate');
+    if (deliveryDateInput) {
+        deliveryDateInput.value = valentinesDateStr;
+    }
+}
+
+// También necesitas esta función para completar el toggleFAQ que se quedó a medias:
+function toggleFAQ(element) {
+    const faqItem = element.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    // Cerrar todos los demás items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+            item.classList.remove('active');
+        }
+    });
+    
+    // Toggle el item actual
+    if (isActive) {
+        faqItem.classList.remove('active');
+    } else {
+        faqItem.classList.add('active');
+    }
+}
+
+// Agregar estas líneas al final del DOMContentLoaded:
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (código existente)
+    
+    // Agregar evento de clic para las FAQs
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function(e) {
+            toggleFAQ(this);
+        });
+    });
+    
+    // Agregar soporte para tecla Enter en FAQs
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFAQ(this);
+            }
+        });
+    });
+});
+</script>
